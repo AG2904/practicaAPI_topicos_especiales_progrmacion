@@ -75,8 +75,27 @@ app.get('/users', async (req, res) => {
     }catch(err){
       res.status(500).send({
         success: false,
-        message: 'Error al obtener los usuarios, por favor intente de nuevo',
+        message: err.message || 'Error al obtener los usuarios, por favor intente de nuevo',
         outcome: []
      })  
     }
+});
+
+app.patch('/users/:id', async (req, res) => {
+   try{
+     const userId = req.params.id;
+     const updateData = req.body;
+     await User.findOneAndUpdate({ _id: userId }, updateData).exec();
+       res.status(200).send({
+         succsess: true,
+         message: 'Se actualizaron los datos del usuario',
+         outcome: []  
+       });
+   }catch(err){
+      res.status(500).send({
+         success: false,
+         message: 'Error al actualizar los datos del usuario, por favor intente mas tarde',
+         outcome: []
+      })  
+   }
 });
