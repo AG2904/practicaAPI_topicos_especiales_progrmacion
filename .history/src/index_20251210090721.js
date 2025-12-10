@@ -33,48 +33,9 @@ app.use(express.urlencoded({ extended: false }))
 app.listen(port, function () {
     connectDB();
     console.log(`Api corriendo en http://localhost:${port}!`)
-});
+})
 
 app.get('/', (req, res) => {
     console.log("Mi primer endpoint");
     res.status(200).send('Hola, la API está funcionando correctamente');
-});
-
-app.post('/', async (req, res) => {
-   try{
-    var data = req.body;
-
-    var newUser = new User(data);
-    await newUser.save();
-    res.status(200).send({
-        succsess: true,
-        message: 'Se resigtró el usuario',
-        outcome: []
-    });
-
-   }catch(err){
-     res.status(500).send({
-        success: false,
-        message: 'Error al registrar el usuario, por favor intente de nuevo',
-        outcome: []
-     })
-   }
-});
-
-app.get('/users', async (req, res) => {
-  try{
-      var usuarios = await User.find().exec();
-
-    res.status(200).send({
-        succsess: true,
-        message: 'Se obtuvieron los usuarios',
-        outcome: [usuarios]  
-     });
-    }catch(err){
-      res.status(500).send({
-        success: false,
-        message: 'Error al obtener los usuarios, por favor intente de nuevo',
-        outcome: []
-     })  
-    }
 });
