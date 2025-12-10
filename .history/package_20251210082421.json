@@ -1,0 +1,20 @@
+{
+  "name": "practica",
+  "version": "1.0.0",
+  "description": "practica top",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AG2904/practicaAPI_topicos_especiales_progrmacion.git"
+  },
+  "author": "Andres Guilarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AG2904/practicaAPI_topicos_especiales_progrmacion/issues"
+  },
+  "homepage": "https://github.com/AG2904/practicaAPI_topicos_especiales_progrmacion#readme"
+}
