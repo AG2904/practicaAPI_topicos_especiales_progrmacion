@@ -19,8 +19,6 @@
   "homepage": "https://github.com/AG2904/practicaAPI_topicos_especiales_progrmacion#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "mongoose": "^9.0.1"
+    "express": "^5.2.1"
   }
 }
